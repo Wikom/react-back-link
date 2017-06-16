@@ -15,7 +15,11 @@ const BackLink = ({children, className, goBack}) =>
     </button>;
 
 const mapDispatchToProps = dispatch => ({
-    goBack: () => dispatch(goBack())
+    goBack: (evt) => {
+        evt.preventDefault();
+        evt.stopPropagation();
+        return dispatch(goBack());
+    }
 });
 
 const BackLinkContainer = connect(null, mapDispatchToProps)(BackLink);
