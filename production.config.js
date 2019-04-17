@@ -3,42 +3,26 @@
  */
 
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'lib'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
         library: 'reactBackLink',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                use: 'babel-loader'
             }
         ]
     },
     devtool: 'source-map',
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                drop_console: true
-            },
-            output: {
-                comments: false
-            }
-        })
-    ],
     externals: {
         "prop-types": "prop-types",
         "react": "react",
