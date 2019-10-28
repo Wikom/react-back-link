@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {goBack} from 'react-router-redux'
 
-import Symbol from 'react-symbol'
+import Symbol from '@wikom/react-symbol'
 
 const BackLink = ({children, className, goBack}) =>
     <button className={className} onClick={goBack}>
