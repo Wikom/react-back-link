@@ -1,6 +1,6 @@
 {
   "name": "@wikom/react-back-link",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "repository": {
